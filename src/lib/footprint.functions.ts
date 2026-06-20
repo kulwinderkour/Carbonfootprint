@@ -14,7 +14,7 @@ const SaveSchema = z.object({
 
 export const saveFootprintEntry = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: unknown) => SaveSchema.parse(input))
+  .validator((input: unknown) => SaveSchema.parse(input))
   .handler(async ({ data, context }) => {
     const now = new Date();
     const { error, data: row } = await context.supabase
@@ -51,7 +51,7 @@ const PersonaSchema = z.object({
 
 export const updatePersona = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: unknown) => PersonaSchema.parse(input))
+  .validator((input: unknown) => PersonaSchema.parse(input))
   .handler(async ({ data, context }) => {
     const { error } = await context.supabase
       .from("profiles")
@@ -80,7 +80,7 @@ const GoalSchema = z.object({
 });
 export const saveGoal = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: unknown) => GoalSchema.parse(input))
+  .validator((input: unknown) => GoalSchema.parse(input))
   .handler(async ({ data, context }) => {
     const monday = new Date();
     monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));

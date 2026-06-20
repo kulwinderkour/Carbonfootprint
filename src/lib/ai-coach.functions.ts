@@ -44,7 +44,7 @@ User context: persona=${ctx.persona ?? "unknown"}, monthly footprint=${ctx.total
 }
 
 export const chatWithCoach = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => ChatSchema.parse(input))
+  .validator((input: unknown) => ChatSchema.parse(input))
   .handler(async ({ data }) => {
     const key = process.env.LOVABLE_API_KEY;
     if (!key) return { message: GENERIC_FALLBACK, source: "fallback" as const };
@@ -68,7 +68,7 @@ export const chatWithCoach = createServerFn({ method: "POST" })
   });
 
 export const generateCoachMessage = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) =>
+  .validator((input: unknown) =>
     z
       .object({
         persona: z.enum(["student", "young_professional", "hosteller", "homeowner"]),
