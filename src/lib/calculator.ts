@@ -1,10 +1,19 @@
 // Pure emission-calculation engine. No side effects, no IO.
 import {
-  AC_KW, DIET_KG_PER_DAY, FLIGHT_KG_PER_TRIP, IMPACT_THRESHOLDS,
-  INDIA_GRID_KG_PER_KWH, TRANSPORT_FACTORS, WASTE_FACTORS, WATER_KG_PER_KL,
+  AC_KW,
+  DIET_KG_PER_DAY,
+  FLIGHT_KG_PER_TRIP,
+  IMPACT_THRESHOLDS,
+  INDIA_GRID_KG_PER_KWH,
+  TRANSPORT_FACTORS,
+  WASTE_FACTORS,
+  WATER_KG_PER_KL,
 } from "@/constants/emissionFactors";
 import type {
-  Category, CategoryBreakdown, FootprintInput, FootprintResult,
+  Category,
+  CategoryBreakdown,
+  FootprintInput,
+  FootprintResult,
 } from "@/types/footprint";
 import { round2 } from "./validation";
 
@@ -31,8 +40,8 @@ export function calcFood(input: FootprintInput): number {
 export function calcWaste(input: FootprintInput): number {
   return round2(
     input.wasteLandfillKg * WASTE_FACTORS.landfill +
-    input.wasteRecycledKg * WASTE_FACTORS.recycled +
-    input.wasteCompostedKg * WASTE_FACTORS.composted,
+      input.wasteRecycledKg * WASTE_FACTORS.recycled +
+      input.wasteCompostedKg * WASTE_FACTORS.composted,
   );
 }
 
@@ -63,7 +72,8 @@ export function calculateFootprint(input: FootprintInput): FootprintResult {
 }
 
 export function categoryPercentages(breakdown: CategoryBreakdown): Record<Category, number> {
-  const total = breakdown.transport + breakdown.energy + breakdown.food + breakdown.waste + breakdown.water;
+  const total =
+    breakdown.transport + breakdown.energy + breakdown.food + breakdown.waste + breakdown.water;
   if (total === 0) return { transport: 0, energy: 0, food: 0, waste: 0, water: 0 };
   return {
     transport: round2((breakdown.transport / total) * 100),

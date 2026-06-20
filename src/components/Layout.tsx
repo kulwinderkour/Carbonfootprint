@@ -5,7 +5,9 @@ import { AICoachWidget } from "./AICoachWidget";
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Header />
       <main id="main-content" className="mx-auto max-w-6xl px-4 py-8 md:py-12">
         {children}

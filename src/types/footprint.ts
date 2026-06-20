@@ -5,9 +5,16 @@ export type Persona = "student" | "young_professional" | "hosteller" | "homeowne
 export type Category = "transport" | "energy" | "food" | "waste" | "water";
 
 export type VehicleType =
-  | "petrol_car" | "diesel_car" | "electric_car"
-  | "bus" | "metro" | "bike" | "walk"
-  | "autorickshaw" | "scooter_petrol" | "flight_short";
+  | "petrol_car"
+  | "diesel_car"
+  | "electric_car"
+  | "bus"
+  | "metro"
+  | "bike"
+  | "walk"
+  | "autorickshaw"
+  | "scooter_petrol"
+  | "flight_short";
 
 export type DietType = "vegan" | "vegetarian" | "mixed" | "heavy_meat";
 

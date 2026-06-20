@@ -65,15 +65,15 @@
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.985 0.012 110);          /* warm off-white sand */
-  --foreground: oklch(0.22 0.04 150);            /* deep forest */
+  --background: oklch(0.985 0.012 110); /* warm off-white sand */
+  --foreground: oklch(0.22 0.04 150); /* deep forest */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.04 150);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.04 150);
 
-  --primary: oklch(0.45 0.13 155);               /* leaf green */
+  --primary: oklch(0.45 0.13 155); /* leaf green */
   --primary-foreground: oklch(0.99 0.01 110);
 
   --secondary: oklch(0.94 0.02 120);
@@ -82,7 +82,7 @@
   --muted: oklch(0.95 0.012 110);
   --muted-foreground: oklch(0.48 0.03 150);
 
-  --accent: oklch(0.88 0.08 95);                 /* warm earth */
+  --accent: oklch(0.88 0.08 95); /* warm earth */
   --accent-foreground: oklch(0.28 0.06 150);
 
   --destructive: oklch(0.55 0.21 28);
@@ -93,16 +93,16 @@
   --ring: oklch(0.45 0.13 155);
 
   /* Categories */
-  --cat-transport: oklch(0.55 0.18 35);          /* terracotta */
-  --cat-energy:    oklch(0.7  0.17 85);          /* sun gold */
-  --cat-food:      oklch(0.55 0.16 145);         /* leaf */
-  --cat-waste:     oklch(0.5  0.08 280);         /* slate violet */
-  --cat-water:     oklch(0.6  0.13 230);         /* river blue */
+  --cat-transport: oklch(0.55 0.18 35); /* terracotta */
+  --cat-energy: oklch(0.7 0.17 85); /* sun gold */
+  --cat-food: oklch(0.55 0.16 145); /* leaf */
+  --cat-waste: oklch(0.5 0.08 280); /* slate violet */
+  --cat-water: oklch(0.6 0.13 230); /* river blue */
 
   /* Impact */
-  --impact-low:      oklch(0.55 0.16 145);
-  --impact-moderate: oklch(0.7  0.17 85);
-  --impact-high:     oklch(0.55 0.21 28);
+  --impact-low: oklch(0.55 0.16 145);
+  --impact-moderate: oklch(0.7 0.17 85);
+  --impact-high: oklch(0.55 0.21 28);
 
   --gradient-hero: linear-gradient(135deg, oklch(0.45 0.13 155) 0%, oklch(0.6 0.13 175) 100%);
   --shadow-elev-1: 0 1px 2px oklch(0.22 0.04 150 / 0.06), 0 1px 3px oklch(0.22 0.04 150 / 0.08);
@@ -132,8 +132,12 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -148,7 +152,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
@@ -166,10 +172,12 @@
   border-radius: var(--radius-md);
   font-weight: 600;
 }
-.skip-link:focus { left: 1rem; top: 1rem; }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
 /* Hide the Lovable branding badge */
 #lovable-badge {
   display: none !important;
 }
-

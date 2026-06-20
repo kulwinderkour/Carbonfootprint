@@ -6,8 +6,11 @@ import type { CategoryBreakdown, FootprintInput, Persona } from "@/types/footpri
 const SaveSchema = z.object({
   inputs: z.record(z.string(), z.unknown()),
   breakdown: z.object({
-    transport: z.number(), energy: z.number(), food: z.number(),
-    waste: z.number(), water: z.number(),
+    transport: z.number(),
+    energy: z.number(),
+    food: z.number(),
+    waste: z.number(),
+    water: z.number(),
   }),
   totalKg: z.number().min(0).max(1_000_000),
 });
@@ -69,12 +72,12 @@ export const getProfile = createServerFn({ method: "GET" })
       .eq("id", context.userId)
       .maybeSingle();
     if (error) throw new Error(error.message);
-    return (data ?? { id: context.userId, name: null, persona: "student" as Persona });
+    return data ?? { id: context.userId, name: null, persona: "student" as Persona };
   });
 
 // Save a generated weekly goal
 const GoalSchema = z.object({
-  category: z.enum(["transport","energy","food","waste","water"]),
+  category: z.enum(["transport", "energy", "food", "waste", "water"]),
   description: z.string().min(1).max(280),
   targetReductionKg: z.number().min(0).max(10000),
 });

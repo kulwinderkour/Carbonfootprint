@@ -80,7 +80,8 @@ export const generateCoachMessage = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const key = process.env.LOVABLE_API_KEY;
-    if (!key) return { message: FALLBACK(data.totalKg, data.topCategory), source: "fallback" as const };
+    if (!key)
+      return { message: FALLBACK(data.totalKg, data.topCategory), source: "fallback" as const };
     const { createLovableAiGatewayProvider } = await import("./ai-gateway.server");
     const gateway = createLovableAiGatewayProvider(key);
     const trend =
@@ -96,7 +97,10 @@ Write a single warm, specific paragraph (max 3 sentences, no lists, no emojis) t
 2) names the top category as their best lever,
 3) gives ONE concrete habit they can start this week.`;
     try {
-      const { text } = await generateText({ model: gateway("google/gemini-3-flash-preview"), prompt });
+      const { text } = await generateText({
+        model: gateway("google/gemini-3-flash-preview"),
+        prompt,
+      });
       const clean = (text ?? "").trim();
       return { message: clean || FALLBACK(data.totalKg, data.topCategory), source: "ai" as const };
     } catch (e) {

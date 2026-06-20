@@ -80,16 +80,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Verdant — Carbon Footprint Awareness" },
-      { name: "description", content: "Calculate, understand, and shrink your monthly carbon footprint." },
+      {
+        name: "description",
+        content: "Calculate, understand, and shrink your monthly carbon footprint.",
+      },
       { name: "theme-color", content: "#2c5e3f" },
       { property: "og:title", content: "Verdant — Carbon Footprint Awareness" },
-      { property: "og:description", content: "Calculate, understand, and shrink your monthly carbon footprint." },
+      {
+        property: "og:description",
+        content: "Calculate, understand, and shrink your monthly carbon footprint.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Verdant — Carbon Footprint Awareness" },
-      { name: "twitter:description", content: "Calculate, understand, and shrink your monthly carbon footprint." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93c05704-e1c8-478a-b4bf-e05e42cb4be7/id-preview-434220bd--818e128b-b2dc-40fa-934b-5468a1174b13.lovable.app-1781585051397.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93c05704-e1c8-478a-b4bf-e05e42cb4be7/id-preview-434220bd--818e128b-b2dc-40fa-934b-5468a1174b13.lovable.app-1781585051397.png" },
+      {
+        name: "twitter:description",
+        content: "Calculate, understand, and shrink your monthly carbon footprint.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93c05704-e1c8-478a-b4bf-e05e42cb4be7/id-preview-434220bd--818e128b-b2dc-40fa-934b-5468a1174b13.lovable.app-1781585051397.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/93c05704-e1c8-478a-b4bf-e05e42cb4be7/id-preview-434220bd--818e128b-b2dc-40fa-934b-5468a1174b13.lovable.app-1781585051397.png",
+      },
     ],
     links: [
       {

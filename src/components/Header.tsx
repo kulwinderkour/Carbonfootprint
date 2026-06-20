@@ -30,15 +30,46 @@ export function Header() {
           <span>Verdant</span>
         </Link>
         <nav aria-label="Primary" className="hidden gap-1 md:flex">
-          <Link to="/" activeOptions={{ exact: true }} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>Home</Link>
+          <Link
+            to="/"
+            activeOptions={{ exact: true }}
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+            activeProps={{ className: "text-foreground" }}
+          >
+            Home
+          </Link>
           {user && (
             <>
-              <Link to="/calculator" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>Calculator</Link>
-              <Link to="/dashboard" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>Dashboard</Link>
-              <Link to="/progress" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>Progress</Link>
+              <Link
+                to="/calculator"
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+                activeProps={{ className: "text-foreground" }}
+              >
+                Calculator
+              </Link>
+              <Link
+                to="/dashboard"
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+                activeProps={{ className: "text-foreground" }}
+              >
+                Dashboard
+              </Link>
+              <Link
+                to="/progress"
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+                activeProps={{ className: "text-foreground" }}
+              >
+                Progress
+              </Link>
             </>
           )}
-          <Link to="/about" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>About</Link>
+          <Link
+            to="/about"
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+            activeProps={{ className: "text-foreground" }}
+          >
+            About
+          </Link>
         </nav>
         <div>
           {user ? (

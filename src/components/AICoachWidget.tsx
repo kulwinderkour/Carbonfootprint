@@ -44,7 +44,9 @@ export function AICoachWidget() {
   const latest = (history.data as FootprintEntryRow[] | undefined)?.[0];
   const context = latest
     ? (() => {
-        const result = calculateFootprint(sanitizeFootprintInput(latest.inputs as Partial<FootprintInput>));
+        const result = calculateFootprint(
+          sanitizeFootprintInput(latest.inputs as Partial<FootprintInput>),
+        );
         return {
           persona: ((profile.data?.persona as Persona) ?? "student") as Persona,
           totalKg: latest.total_kg,
@@ -72,7 +74,10 @@ export function AICoachWidget() {
     } catch (e) {
       setMessages((m) => [
         ...m,
-        { role: "assistant", content: e instanceof Error ? e.message : "Coach is unavailable right now." },
+        {
+          role: "assistant",
+          content: e instanceof Error ? e.message : "Coach is unavailable right now.",
+        },
       ]);
     } finally {
       setSending(false);
@@ -91,7 +96,10 @@ export function AICoachWidget() {
       >
         {open ? <X className="h-6 w-6" /> : <Bot className="h-7 w-7" />}
         {!open && (
-          <span className="absolute -top-1 -right-1 inline-flex h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-background" aria-hidden />
+          <span
+            className="absolute -top-1 -right-1 inline-flex h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-background"
+            aria-hidden
+          />
         )}
       </button>
 
@@ -109,7 +117,9 @@ export function AICoachWidget() {
             <div className="flex-1">
               <p className="text-sm font-semibold">Verdant AI Coach</p>
               <p className="text-xs text-primary-foreground/80">
-                {context ? `Tuned to your ${Math.round(context.totalKg)} kg footprint` : "Ask anything about your footprint"}
+                {context
+                  ? `Tuned to your ${Math.round(context.totalKg)} kg footprint`
+                  : "Ask anything about your footprint"}
               </p>
             </div>
             <button
@@ -121,9 +131,12 @@ export function AICoachWidget() {
             </button>
           </header>
 
-          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-4">
+          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
             {messages.map((m, i) => (
-              <div key={i} className={m.role === "user" ? "flex justify-end" : "flex justify-start"}>
+              <div
+                key={i}
+                className={m.role === "user" ? "flex justify-end" : "flex justify-start"}
+              >
                 <div
                   className={
                     m.role === "user"
@@ -161,7 +174,11 @@ export function AICoachWidget() {
               className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
             />
             <Button type="submit" size="icon" disabled={sending || !input.trim()} aria-label="Send">
-              {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+              {sending ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Send className="h-4 w-4" />
+              )}
             </Button>
           </form>
         </div>
