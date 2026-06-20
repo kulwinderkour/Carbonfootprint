@@ -167,3 +167,9 @@
   font-weight: 600;
 }
 .skip-link:focus { left: 1rem; top: 1rem; }
+
+/* Hide the Lovable branding badge */
+#lovable-badge {
+  display: none !important;
+}
+
