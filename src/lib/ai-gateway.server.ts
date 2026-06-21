@@ -3,7 +3,7 @@ import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
 const LOVABLE_AIG_RUN_ID_HEADER = "X-Lovable-AIG-Run-ID";
 
-export function createLovableAiGatewayProvider(lovableApiKey: string, initialRunId?: string) {
+export function createAiGatewayProvider(apiKey: string, initialRunId?: string) {
   let runId = initialRunId?.trim() || undefined;
   let resolveRunId: (value: string | undefined) => void = () => {};
   let runIdResolved = false;
@@ -22,10 +22,10 @@ export function createLovableAiGatewayProvider(lovableApiKey: string, initialRun
   if (runId) publishRunId(runId);
 
   const provider = createOpenAICompatible({
-    name: "lovable",
+    name: "ai-gateway",
     baseURL: "https://ai.gateway.lovable.dev/v1",
     headers: {
-      "Lovable-API-Key": lovableApiKey,
+      "Lovable-API-Key": apiKey,
       "X-Lovable-AIG-SDK": "vercel-ai-sdk",
     },
     fetch: async (input, init) => {
@@ -49,3 +49,4 @@ export function createLovableAiGatewayProvider(lovableApiKey: string, initialRun
     waitForRunId: () => (runId ? Promise.resolve(runId) : runIdReady),
   });
 }
+

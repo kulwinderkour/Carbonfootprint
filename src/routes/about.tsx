@@ -74,7 +74,7 @@ function About() {
 
         <h2 className="mt-8 text-xl font-semibold">AI coach</h2>
         <p>
-          The coach message is generated server-side via Lovable AI Gateway (Gemini). The API key
+          The coach message is generated server-side via the AI Gateway (Gemini). The API key
           never reaches the browser; failures fall back to a deterministic message.
         </p>
 

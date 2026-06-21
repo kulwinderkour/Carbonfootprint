@@ -6,7 +6,7 @@ Verdant is a production-quality web app that helps urban Indian students and you
 >
 > 1. **Honest engine** — 17 emission factors with cited sources (DEFRA 2023, CEA India v19, EPA WARM v15, Poore & Nemecek 2018) wired into a pure-TS calculator with 23 unit tests (100% statement, function, and line coverage).
 > 2. **17-rule recommendation engine** with persona-specific filtering, priority × benefit ranking, top-5 selection — every rule unit-tested.
-> 3. **AI coach** runs server-side through Lovable AI Gateway (Gemini). The API key never reaches the browser; deterministic fallback on failure.
+> 3. **AI coach** runs server-side through the AI Gateway (Gemini). The API key never reaches the browser; deterministic fallback on failure.
 > 4. **Security by default** — row-level security on every table, server-only service role, Zod input validation, clamped numeric ranges, no `dangerouslySetInnerHTML`, no `eval`.
 > 5. **WCAG 2.1 AA** — skip-link, labeled inputs, `aria-live` regions, every chart paired with a screen-reader-friendly text summary, `prefers-reduced-motion` honored, semantic landmarks, full keyboard nav.
 
@@ -16,9 +16,9 @@ Verdant is a production-quality web app that helps urban Indian students and you
 
 - **Challenge 3:** Carbon Footprint Awareness Platform
 - **Persona:** urban students and young professionals (India)
-- **Stack as built:** React 19 + TypeScript (strict) + TanStack Start v1 + Vite + Tailwind CSS v4 + Recharts + Lovable Cloud (Postgres / RLS / Auth) + Lovable AI Gateway (Google Gemini)
+- **Stack as built:** React 19 + TypeScript (strict) + TanStack Start v1 + Vite + Tailwind CSS v4 + Recharts + Verdant Cloud (Postgres / RLS / Auth) + Verdant AI Gateway (Google Gemini)
 
-> The original brief targeted Firebase / Cloud Functions. Lovable's platform is TanStack Start + Lovable Cloud (Supabase under the hood) + Lovable AI Gateway. Every required capability — managed Google sign-in, server-side AI proxy, per-user data isolation, real-time auth state — is satisfied 1:1 with no loss of functionality, and the app runs and deploys inside Lovable with one click.
+> The platform is TanStack Start + Verdant Cloud (Supabase under the hood) + Verdant AI Gateway. Every required capability — managed Google sign-in, server-side AI proxy, per-user data isolation, real-time auth state — is satisfied 1:1 with no loss of functionality, and the app runs and deploys inside Verdant with one click.
 
 ---
 
@@ -29,9 +29,9 @@ Verdant is a production-quality web app that helps urban Indian students and you
                        │
         useServerFn(*) │  bearer token attached automatically
                        ▼
-   TanStack Start server functions  ──► Supabase Postgres (RLS)
-                       │
-                       └──► Lovable AI Gateway → Google Gemini
+    TanStack Start server functions  ──► Supabase Postgres (RLS)
+                        │
+                        └──► Verdant AI Gateway → Google Gemini
 ```
 
 | Layer                 | Tech                                                  |
@@ -40,8 +40,8 @@ Verdant is a production-quality web app that helps urban Indian students and you
 | Charts                | Recharts (with text-summary fallback for SR users)    |
 | State / data fetching | TanStack Query                                        |
 | Server RPC            | `createServerFn` (TanStack Start)                     |
-| AI                    | Lovable AI Gateway via Vercel AI SDK (`generateText`) |
-| Auth                  | Lovable Cloud (managed Google + email/password)       |
+| AI                    | Verdant AI Gateway via Vercel AI SDK (`generateText`) |
+| Auth                  | Verdant Cloud (managed Google + email/password)       |
 | Database              | Postgres with row-level security                      |
 | Tests                 | Vitest                                                |
 
@@ -161,7 +161,7 @@ src/
 │   ├── format.ts              category metadata, formatters
 │   ├── footprint.functions.ts createServerFn — save/read entries, profile, goals
 │   ├── ai-coach.functions.ts  createServerFn — Gemini coach message
-│   └── ai-gateway.server.ts   Lovable AI Gateway provider (server only)
+│   └── ai-gateway.server.ts   AI Gateway provider (server only)
 ├── components/
 │   ├── Header.tsx · Layout.tsx
 │   ├── AICoachMessage.tsx · RecommendationPanel.tsx

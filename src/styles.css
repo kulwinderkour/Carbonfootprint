@@ -177,7 +177,7 @@
   top: 1rem;
 }
 
-/* Hide the Lovable branding badge */
+/* Hide default branding badge */
 #lovable-badge {
   display: none !important;
 }

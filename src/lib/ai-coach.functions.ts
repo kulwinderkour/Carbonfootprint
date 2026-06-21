@@ -49,8 +49,8 @@ export const chatWithCoach = createServerFn({ method: "POST" })
     const key = process.env.LOVABLE_API_KEY;
     if (!key) return { message: GENERIC_FALLBACK, source: "fallback" as const };
 
-    const { createLovableAiGatewayProvider } = await import("./ai-gateway.server");
-    const gateway = createLovableAiGatewayProvider(key);
+    const { createAiGatewayProvider } = await import("./ai-gateway.server");
+    const gateway = createAiGatewayProvider(key);
     const system = buildSystemPrompt(data.context);
 
     try {
@@ -82,8 +82,8 @@ export const generateCoachMessage = createServerFn({ method: "POST" })
     const key = process.env.LOVABLE_API_KEY;
     if (!key)
       return { message: FALLBACK(data.totalKg, data.topCategory), source: "fallback" as const };
-    const { createLovableAiGatewayProvider } = await import("./ai-gateway.server");
-    const gateway = createLovableAiGatewayProvider(key);
+    const { createAiGatewayProvider } = await import("./ai-gateway.server");
+    const gateway = createAiGatewayProvider(key);
     const trend =
       data.previousTotalKg != null
         ? data.totalKg < data.previousTotalKg
