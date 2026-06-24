@@ -10,8 +10,6 @@
  * - Waste: US EPA WARM v15 — landfill / recycling / composting end-of-life factors.
  * - Water: India MoJS energy intensity of urban water treatment + heating.
  * - India per-capita average: Our World in Data, 2022 — ~1.9 t CO2e/yr ≈ 150 kg/month.
- *
- * 
  * All factors expressed as kg CO2-equivalent.
  */
 
