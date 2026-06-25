@@ -29,13 +29,14 @@ export const TRANSPORT_FACTORS: Record<VehicleType, number> = {
   flight_short: 0.255,
 };
 
-/** Average short-haul return flight (~1500 km round trip). */
+
+/* Average short-haul return flight (~1500 km round trip). */
 export const FLIGHT_KG_PER_TRIP = 1500 * TRANSPORT_FACTORS.flight_short;
 
-/** kg CO2e per kWh — India grid */
+/* kg CO2e per kWh — India grid */
 export const INDIA_GRID_KG_PER_KWH = 0.82;
 
-/** Approx. AC consumption — 1.5 kW unit, monthly hours derived from acHoursPerDay * 30. */
+/* Approx. AC consumption — 1.5 kW unit, monthly hours derived from acHoursPerDay * 30. */
 export const AC_KW = 1.5;
 
 /** kg CO2e per day per person, by diet (multiply by 30 for monthly). */
@@ -65,7 +66,7 @@ export const IMPACT_THRESHOLDS = {
   moderate: 500,
 } as const;
 
-/** Input clamps — defensive limits to prevent absurd values. */
+/* Input clamps — defensive limits to prevent absurd values. */
 export const INPUT_LIMITS = {
   kmPerMonth: { min: 0, max: 10000 },
   flightsPerMonth: { min: 0, max: 30 },
@@ -74,3 +75,6 @@ export const INPUT_LIMITS = {
   wasteKg: { min: 0, max: 500 },
   waterLitersPerDay: { min: 0, max: 2000 },
 } as const;
+
+
+
