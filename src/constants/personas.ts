@@ -10,6 +10,7 @@ export const PERSONAS: Array<{ id: Persona; label: string; description: string }
     id: "young_professional",
     label: "Young professional",
     description: "Early-career, urban commute.",
+
   },
   {
     id: "hosteller",
@@ -21,6 +22,11 @@ export const PERSONAS: Array<{ id: Persona; label: string; description: string }
     label: "Homeowner",
     description: "Owns the place — can invest in solar / appliances.",
   },
+  {
+    id:"builder",
+    label:"Builder",
+    description:"Builds the hotels",
+  }
 ];
 
 export const PERSONA_LABEL: Record<Persona, string> = {
