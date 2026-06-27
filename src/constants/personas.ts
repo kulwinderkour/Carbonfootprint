@@ -34,4 +34,5 @@ export const PERSONA_LABEL: Record<Persona, string> = {
   young_professional: "Young professional",
   hosteller: "Hosteller",
   homeowner: "Homeowner",
+  builder:"builder"
 };
