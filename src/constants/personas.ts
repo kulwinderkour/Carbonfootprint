@@ -22,11 +22,6 @@ export const PERSONAS: Array<{ id: Persona; label: string; description: string }
     label: "Homeowner",
     description: "Owns the place — can invest in solar / appliances.",
   },
-  {
-    id:"builder",
-    label:"Builder",
-    description:"Builds the hotels",
-  }
 ];
 
 export const PERSONA_LABEL: Record<Persona, string> = {
@@ -34,5 +29,4 @@ export const PERSONA_LABEL: Record<Persona, string> = {
   young_professional: "Young professional",
   hosteller: "Hosteller",
   homeowner: "Homeowner",
-  builder:"builder"
 };
