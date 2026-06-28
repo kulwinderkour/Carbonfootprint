@@ -23,7 +23,6 @@ const totalWaste = (i: FootprintInput) =>
   i.wasteLandfillKg + i.wasteRecycledKg + i.wasteCompostedKg;
 
 export const RULES: Rule[] = [
-  // ── TRANSPORT
   {
     id: "T1",
     category: "transport",
