@@ -36,6 +36,7 @@ export const RULES: Rule[] = [
     condition: (i) => carKmPerMonth(i) > 400,
   },
   {
+    // transport
     id: "T2",
     category: "transport",
     title: "Switch to metro / bus for the city commute",
@@ -148,6 +149,7 @@ export const RULES: Rule[] = [
     condition: (i) => i.diet === "heavy_meat",
   },
   {
+    // food
     id: "F2",
     category: "food",
     title: "Two plant-based days a week",
