@@ -18,14 +18,14 @@ Verdant is a production-quality web app that helps urban Indian students and you
 - **Persona:** urban students and young professionals (India)
 - **Stack as built:** React 19 + TypeScript (strict) + TanStack Start v1 + Vite + Tailwind CSS v4 + Recharts + Verdant Cloud (Postgres / RLS / Auth) + Verdant AI Gateway (Google Gemini)
 
-> The platform is TanStack Start + Verdant Cloud (Supabase under the hood) + Verdant AI Gateway. Every required capability — managed Google sign-in, server-side AI proxy, per-user data isolation, real-time auth state — is satisfied 1:1 with no loss of functionality, and the app runs and deploys inside Verdant with one click.
+> The platform is TanStack Start + Verdant Cloud (Supabase under the hood) + Verdant AI Gateway. Every required capability — managed Google sign-in, server-side AI proxy, per-user data isolation, real-time auth state — is satisfied 1:1 with no loss of functionality, and the app runs and deploys inside Verdant with one click
 
 ---
 
 ## Architecture
 
 ```
-            Browser (React 19 + TanStack Router)
+            Browser (React 19 + NEXT.JS+ TanStack Router)
                        │
         useServerFn(*) │  bearer token attached automatically
                        ▼
@@ -55,7 +55,7 @@ Verdant is a production-quality web app that helps urban Indian students and you
 | Diesel car                      | 0.171 kg/km                  | DEFRA 2023                                 |
 | Electric car                    | 0.053 kg/km                  | DEFRA 2023                                 |
 | Bus / Metro                     | 0.089 / 0.041 kg/km          | DEFRA 2023                                 |
-| Autorickshaw                    | 0.097 kg/km                  | India MoEF averages                        |
+| Autorickshaw                    | 0.097 kg/km                  | India MoEF averages                          |
 | Petrol scooter                  | 0.083 kg/km                  | India MoEF                                 |
 | Short flight                    | 0.255 kg/km                  | DEFRA 2023                                 |
 | Electricity (India grid)        | 0.82 kg/kWh                  | CEA India CO₂ Baseline Database v19 (2023) |
