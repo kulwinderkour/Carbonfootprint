@@ -65,6 +65,8 @@ Verdant is a production-quality web app that helps urban Indian students and you
 | India average                   | 150 kg CO₂e/month            | OWID per-capita 2022                       |
 
 All factors live in `src/constants/emissionFactors.ts` with JSDoc.
+# DATABASE
+
 
 ---
 
