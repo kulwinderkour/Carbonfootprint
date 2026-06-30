@@ -64,8 +64,7 @@ Verdant is a production-quality web app that helps urban Indian students and you
 | Water (treat + heat)            | 0.298 kg/kL                  | India Ministry of Jal Shakti               |
 | India average                   | 150 kg CO₂e/month            | OWID per-capita 2022                       |
 
-All factors live in `src/constants/emissionFactors.ts` with JSDoc.
-# DATABASE
+All factors live in `src/constants/emissionFactors.ts` with JSDoc
 
 
 ---
