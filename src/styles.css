@@ -97,11 +97,11 @@
   --cat-energy: oklch(0.7 0.17 90); /* sun gold */
   --cat-food: oklch(0.55 0.16 145); /* leaf */
   --cat-waste: oklch(0.5 0.08 280); /* slate violet */
-  --cat-water: oklch(0.6 0.13 230); /* river blue */
+  --cat-water: oklch(0.6 0.13 229); /* river blue */
 
   /* Impact */
-  --impact-low: oklch(0.55 0.16 145);
-  --impact-moderate: oklch(0.7 0.17 85);
+  --impact-low: oklch(0.55 0.16 146);
+  --impact-moderate: oklch(0.7 0.18 85);
   --impact-high: oklch(0.55 0.21 28);
 
   --gradient-hero: linear-gradient(135deg, oklch(0.45 0.13 155) 0%, oklch(0.6 0.13 175) 100%);
